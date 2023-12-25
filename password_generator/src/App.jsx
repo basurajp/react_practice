@@ -72,7 +72,7 @@ window.navigator.clipboard.writeText(password)
               value={length}
               className="cursor-pointer"
               onChange={(e) => {
-                setlength(e.target.checked );
+                setlength(e.target.value );
               }}
             />
             <label>Length: {length}</label>
