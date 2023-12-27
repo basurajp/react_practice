@@ -62,11 +62,10 @@ const App = () => {
 
   const [songData, setsongData] = useState(data);
 
-  const handleClick = (index) => {
-    // alert(index);
-    setsongData((prev) => {
-      return prev.map((item, sindex) => {
-        if (sindex === index) {
+  const handleClick = (cindex) => {
+    return setsongData((prev) => {
+      return prev.map((item, index) => {
+        if (index === cindex) {
           return { ...item, added: !item.added };
         }
         return item;
@@ -77,14 +76,14 @@ const App = () => {
   return (
     <>
       <div className="">
-        <NavBar  data ={songData}/>
+        <NavBar  songData = {songData}/>
         <div className="flex gap-4 flex-wrap px-20 mt-10">
           {songData.map((item, index) => (
             <Card
               key={index}
+              index={index}
               item={item}
               handleClick={handleClick}
-              index={index}
             />
           ))}
         </div>
