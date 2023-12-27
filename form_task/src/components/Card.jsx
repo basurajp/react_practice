@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({ item , handleRemove ,index}) => {
+const Card = ({ item, handleRemove, index }) => {
   const { email, image, name } = item;
   return (
     <div className="h-full w-52 bg-zinc-100 rounded-lg flex flex-col items-center p-2 ">
@@ -13,9 +13,12 @@ const Card = ({ item , handleRemove ,index}) => {
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti,
         fugiat?
       </p>
-      <button onClick={()=>{
-        handleRemove(index)
-      }} className="px-3 py-1 bg-red-600 text-xs rounded-lg mt-1 text-white font-semibold">
+      <button
+        onClick={() => {
+          handleRemove(index);
+        }}
+        className="px-3 py-1 bg-red-600 text-xs rounded-lg mt-1 text-white font-semibold"
+      >
         Remove It
       </button>
     </div>
